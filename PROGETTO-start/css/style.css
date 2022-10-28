@@ -1,0 +1,202 @@
+* {
+    font-family: 'Lexend', sans-serif;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(90deg, rgba(201, 0, 255, 1) 0%, rgba(255, 158, 0, 1) 100%);
+}
+
+h1 {
+    text-align: center;
+    color: #170d31;
+    font-size: 3em;
+}
+
+#titolo {
+    margin: 0 auto;
+    width: fit-content;
+    padding: 40px;
+    margin-top: 30;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #9db6d2;
+    box-shadow: 0px 10px 20px -10px #000000, 5px 5px 15px 10px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+    width: 900px;
+    margin: auto;
+    margin-top: 55px;
+    background-color: #9db6d2;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 0;
+    border-radius: 0px 0px 10px 10px;
+}
+
+#close-icon {
+    cursor: pointer;
+}
+
+.icon-grid {
+    /* flex! */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.show {
+    /* visibilità e opacità */
+    opacity: 1 !important;
+}
+
+#griglia>div {
+    /* dimensioni e margini */
+    width: 120px;
+    height: 120px;
+    margin: 10px 10px;
+    background-color: #3a2b83;
+    border: 1px solid #170d31;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgb(27, 27, 27);
+}
+
+.timer {
+    padding: 20px 0;
+    font-size: 1.2em;
+    color: #170d31;
+}
+
+.icon {
+    font-size: 80px;
+    text-align: center;
+    visibility: visible !important;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: wait;
+}
+
+.show {
+    /* agganciare animation-name rotazione carta */
+    animation: rotazione-carta ease-in;
+    animation-duration: .5s;
+    background-color: white;
+    border: 1px solid #170d31;
+    border-radius: 10px;
+}
+
+.find {
+    /* agganciare animation-name indovinato */
+    animation: indovinato;
+    animation-duration: .5s;
+    background-color: rgba(250, 224, 224, 0.56);
+    border: 1px solid #170d31;
+    border-radius: 10px;
+}
+
+.button {
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #c9287a;
+    border: 1px solid #170d31;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px rgb(27, 27, 27);
+}
+
+.button:hover {
+    background-color: #894da7;
+    border: 1px solid #170d31;
+}
+
+#modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#modal.active {
+    display: flex;
+}
+
+#modal h2 {
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 400px;
+    }
+
+    #griglia>div {
+        margin: 5px 5px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .icon {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 420px) {
+    .container {
+        width: 230px;
+    }
+
+    #griglia>div {
+        margin: 5px 5px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+}
+
+@keyframes indovinato {
+
+    /* animazione quando si indovina */
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes rotazione-carta {
+
+    /* animazione quando ruota la carta */
+    from {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(90deg);
+    }
+
+    to {
+        transform: rotateY(180deg);
+    }
+}

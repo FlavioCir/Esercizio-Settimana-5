@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(90deg, rgba(201, 0, 255, 1) 0%, rgba(255, 158, 0, 1) 100%);
+}
+
+button {
+    margin-top: 400px;
+    margin-left: 850px;
+    padding: 50px;
+    background-color: #c9287a;
+    border: 1px solid #170d31;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+button a{
+    color: white;
+    font-size: 3em;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #894da7;
+    border: 1px solid #170d31;
+}
